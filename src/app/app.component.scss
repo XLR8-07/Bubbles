@@ -1,0 +1,28 @@
+.Profile{
+   display: inline-block;
+   border-radius: 50%;
+   width: 200px;
+
+
+   img{
+      border-radius: 50%;
+      width: inherit;
+   }
+   
+}
+
+.Profile:hover{
+   cursor: pointer;
+   width: 220px;
+}
+
+.Shader{
+   display: inline-block;
+   align-self: center;
+   color: #555;
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 100%;
+   width: 100%;
+}
