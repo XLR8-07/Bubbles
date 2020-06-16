@@ -1,28 +1,85 @@
+.bub{
+   font-size: 40px;
+   color: rgb(27, 27, 27);
+   padding-top: 0.6em;
+   padding-left: 1em;
+}
+
 .Profile{
    display: inline-block;
    border-radius: 50%;
-   width: 200px;
+   position: absolute;
+   transform: translate(-50%, -50%);
+   opacity: 80%;
 
 
    img{
       border-radius: 50%;
-      width: inherit;
+      width: 100%;
+      z-index: -1;
    }
    
 }
 
 .Profile:hover{
    cursor: pointer;
-   width: 220px;
+   border: solid 3px rgb(94, 84, 72);
+   z-index: 20;
+   opacity: 100%;
 }
 
-.Shader{
-   display: inline-block;
-   align-self: center;
-   color: #555;
-   position: absolute;
-   top: 0;
-   left: 0;
-   height: 100%;
-   width: 100%;
+.loc-1{
+   left: 205px;
+   top: 545px; 
+
+}
+
+.loc-2{
+   left: 355px;
+   top: 470px;
+}
+
+.loc-3{
+   left: 555px;
+   top: 355px;
+}
+
+.loc-4{
+   left: 670px;
+   top: 530px;
+}
+
+.loc-5{
+   left: 900px;
+   top: 400px;
+}
+
+.loc-6{
+   left: 990px;
+   top: 580px;
+}
+
+.loc-7{
+   left: 1270px;
+   top: 370px;
+}
+
+.loc-8{
+   left: 1433px;
+   top: 550px;
+}
+
+.loc-9{
+   left: 1515px;
+   top: 320px;
+}
+
+.loc-10{
+   left: 1670px;
+   top: 510px;
+}
+
+.loc-11{
+   left: 1320px;
+   top: 715px;
 }
