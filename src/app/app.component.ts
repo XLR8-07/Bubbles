@@ -14,11 +14,11 @@ export class AppComponent {
   }
 
   onClick(){
-    console.log("IMAGE CLICKED!");
+    console.log("Field CLICKED!");
     const dialogconfig = new MatDialogConfig();
     dialogconfig.disableClose = false;
     dialogconfig.autoFocus = true;
-    dialogconfig.width = "50%";
+    dialogconfig.width = "60%";
     this.dialog.open(PopUpComponent,dialogconfig);
   }
 }
