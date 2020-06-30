@@ -1,0 +1,208 @@
+$background: #f5f6fa;
+$text: #9c9c9c;
+$input-bg-color: #fff;
+$input-text-color: #6d6d6d;
+$theme-light: #cae9ff;
+$Theme-major: #85caff;
+$button-text-color: #fff;
+$themed-text-color: #325f92;
+$TestVar: var(--primary-color);
+
+//** Navbar & Title --------------------------
+.navbar{
+   background: $Theme-major;
+   margin-bottom: 2em;
+   box-shadow: 0 6px 10px 0 $theme-light;
+   
+   a{
+      color: white;
+   }
+}
+
+//** Search Bar -------------------------------
+.uppercase {
+	text-transform: uppercase;
+}
+
+//** button
+.btn {
+	display: inline-block;
+	background: transparent;
+	color: inherit;
+	font: inherit;
+	border: 0;
+	outline: 0;
+	padding: 0;
+	transition: all 200ms ease-in;
+   cursor: pointer;
+   transform: translateY(-2px);
+	
+	&--primary {
+		background: $Theme-major;
+		color: $button-text-color;
+		box-shadow: 0 0 10px 2px $theme-light;
+		border-radius: 2em;
+      padding: 8px 30px;
+		
+		&:hover {
+			background: darken($Theme-major, 4%);
+		}
+		
+		&:active {
+			background: $theme-light;
+			box-shadow: inset 0 0 10px 2px $theme-light;
+		}
+	}
+	
+	&--inside {
+		margin-left: -96px;
+	}
+}
+
+//** form
+.form {	
+   display: block;
+   padding-right: -1em;
+   margin-left: auto;
+   margin-right: auto;
+   width: 75%;
+	&__field {
+		width: 95%;
+		background: #fff;
+		color: $input-text-color;
+		font: inherit;
+		box-shadow: -2px 2px 8px 0 rgba(0, 0, 0, 0.1);
+		border: 0;
+		outline: 0;
+		padding: 12px 18px;
+   }
+   
+   margin-bottom: 2em;
+}
+
+
+//** New question ---------------------------------
+.add-q{
+   background: $Theme-major;
+   box-shadow: 0 6px 10px 0 $theme-light;
+   border-radius: 2em;
+   color: white;
+   display: inline-block;
+   cursor: pointer;
+
+   &:hover {
+         background: darken($Theme-major, 4%);
+   }
+
+
+   .material-icons{
+      display: inline-block;
+      color: $Theme-major;
+      background-color: white;
+      border-radius: 1em;
+      font-size: 2em;
+      padding: 5px;
+      margin: 2px;
+   }
+
+   h3{
+      display: inline-block;
+      margin: 0;
+      padding-left: .5em;
+      padding-right: 1em;
+      transform: translateY(-.5em);
+      margin-bottom: -1em;
+   }
+
+   margin-bottom: 2em;
+}
+
+
+//** Cards -------------------------------
+.item-list{
+   display: flex;
+}
+
+.question-list{
+   flex: 1.5;
+   border-right: 1px solid rgb(219, 219, 219);
+   height: 60vh;
+   padding: 0;
+
+   overflow-y: scroll;
+   scrollbar-width: none;
+
+
+   .ques-card{
+      margin: 0px 10px 10px 0px;
+      padding: 10px 20px 10px 20px;
+      background-color: $theme-light;
+      border-radius: 7px;
+      cursor: pointer;
+      
+      &:hover {
+         background: darken($theme-light, 4%);
+      }
+
+
+      p{
+         color: $themed-text-color;
+      }
+   }
+}
+
+.question-list::-webkit-scrollbar {
+    display: none;
+}
+
+
+.mentor-list{
+   flex: 1;
+   height: 60vh;
+
+
+   overflow-y: scroll;
+   scrollbar-width: none;
+
+
+   .Prof-card{
+      margin: 0px 0px 10px 10px;
+      padding: 10px 20px 10px 20px;
+      background-color: $Theme-major;
+      border-radius: 7px;
+      cursor: pointer;
+
+      &:hover {
+         background: darken($Theme-major, 4%);
+      }
+
+      height: 200px;          //temp
+
+      .p{
+         font-size: 10px;
+         color: $text;
+      }
+   }
+}
+
+.mentor-list::-webkit-scrollbar {
+    display: none;
+}
+
+
+.loader{
+   background: $Theme-major;
+   text-align: center;
+   color: white;
+   width: 50%;
+   margin-left: auto;
+   margin-right: auto;
+   border-radius: 2em;
+   box-shadow: 0 6px 10px 0 $theme-light;
+   cursor: pointer;
+
+
+   &:hover{
+      background:  darken($Theme-major, 4%);
+   }
+}

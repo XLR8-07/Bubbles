@@ -1,8 +1,18 @@
-.bub{
-   font-size: 40px;
-   color: rgb(27, 27, 27);
-   padding-top: 0.6em;
-   padding-left: 1em;
+$background: #f5f6fa;
+$text: #9c9c9c;
+$input-bg-color: #fff;
+$input-text-color: #6d6d6d;
+$theme-light: #cae9ff;
+$Theme-mid: #90d1ff;
+$Theme-major: #85caff;
+$button-text-color: #fff;
+$themed-text-color: #325f92;
+
+
+
+.page-titile{
+   color: rgb(154, 65, 255);
+   padding: .4em;
 }
 
 .Profile{
@@ -10,76 +20,100 @@
    border-radius: 50%;
    position: absolute;
    transform: translate(-50%, -50%);
-   opacity: 80%;
-
+   background: $Theme-major;
+   box-shadow: 2px 4px 8px $theme-light;
+   cursor: pointer;
+   text-align: center;
 
    img{
-      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      left: 50%;
+      top:50%;
       width: 100%;
       z-index: -1;
+      opacity: 0%;
+   }
+
+   h1{
+      position: absolute;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      top: 50%;
+      font-size: 50px;
+      color: white;
+   }
+
+   &:hover{
+      box-shadow: 2px 4px 10px $Theme-mid;
+      z-index: 20;
+      background: white;
+      
+      
+      img{
+         opacity: 100%;
+      }
+
+
+      h1{
+         opacity: 0%;
+      }
    }
    
 }
 
-.Profile:hover{
-   cursor: pointer;
-   border: solid 3px rgb(94, 84, 72);
-   z-index: 20;
-   opacity: 100%;
-}
-
 .loc-1{
-   left: 205px;
-   top: 545px; 
+   left: 11%;
+   top: 58%; 
 
 }
 
 .loc-2{
-   left: 355px;
-   top: 470px;
+   left: 18.5%;
+   top: 50%;
 }
 
 .loc-3{
-   left: 555px;
-   top: 355px;
+   left: 29%;
+   top: 37.7%;
 }
 
 .loc-4{
-   left: 670px;
-   top: 530px;
+   left: 35%;
+   top: 56.4%;
 }
 
 .loc-5{
-   left: 900px;
-   top: 400px;
+   left: 46.8%;
+   top: 42.5%;
 }
 
 .loc-6{
-   left: 990px;
-   top: 580px;
+   left: 51.5%;
+   top: 61.7%;
 }
 
 .loc-7{
-   left: 1270px;
-   top: 370px;
+   left: 66.2%;
+   top: 39.4%;
 }
 
 .loc-8{
-   left: 1433px;
-   top: 550px;
+   left: 74.6%;
+   top: 58.5%;
 }
 
 .loc-9{
-   left: 1515px;
-   top: 320px;
+   left: 79%;
+   top: 34%;
 }
 
 .loc-10{
-   left: 1670px;
-   top: 510px;
+   left: 87%;
+   top: 54.3%;
 }
 
 .loc-11{
-   left: 1320px;
-   top: 715px;
+   left: 69.7%;
+   top: 76.1%;
 }
