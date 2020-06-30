@@ -16,29 +16,8 @@
 <div class="item-list">
    <div class="question-list custom-scrollbar-js">
 
-      <div class="ques-card">
-         <h4><b>Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, modi?</b> </h4>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum quae est vitae quod nam cum ea consequatur vel voluptates beatae.</p>
-      </div>
-      <div class="ques-card">
-         <h4><b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, modi?</b> </h4>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. vel voluptates beatae.</p>
-      </div>
-      <div class="ques-card">
-         <h4><b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, modi?</b> </h4>
-         <p>Rerum quae est vitae quod nam cum ea consequatur vel voluptates beatae.</p>
-      </div>
-      <div class="ques-card">
-         <h4><b>Lorem ipsum dolor sit amet consectetur?</b> </h4>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum quae est vitae quod nam cum ea consequatur vel voluptates beatae.</p>
-      </div>
-      <div class="ques-card">
-         <h4><b>Lorem ipsum dolor sit amet consectetur uibusdam, modi?</b> </h4>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum quae est vitae quod nam cum ea consequatur vel voluptates beatae.</p>
-      </div>
-      <div class="ques-card">
-         <h4><b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, modi?</b> </h4>
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum quae est vitae quod nam cum </p>
+      <div class="ques-card" *ngFor="let q of this.QuestionList">
+         <p>{{q.Q}}</p>
       </div>
 
       <div class="loader">

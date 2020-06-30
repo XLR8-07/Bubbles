@@ -24,24 +24,29 @@ $themed-text-color: #325f92;
    box-shadow: 2px 4px 8px $theme-light;
    cursor: pointer;
    text-align: center;
+   transition: .4s;
 
    img{
       transform: translate(-50%, -50%);
       position: absolute;
       left: 50%;
       top:50%;
-      width: 100%;
+      width: 70%;
       z-index: -1;
       opacity: 0%;
+      transition: .4s;
    }
 
    h1{
+      line-height: 90%;
+      font-family: 'Lobster', cursive;
       position: absolute;
       transform: translate(-50%, -50%);
       left: 50%;
       top: 50%;
       font-size: 50px;
       color: white;
+      transition: .4s;
    }
 
    &:hover{
