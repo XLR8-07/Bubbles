@@ -12,7 +12,7 @@ $TestVar: var(--primary-color);
 .navbar{
    background: $Theme-major;
    margin-bottom: 2em;
-   box-shadow: 0 6px 10px 0 $theme-light;
+   box-shadow: 0 6px 8px 0 #c5e7ff ;
    
    a{
       color: white;
@@ -40,12 +40,14 @@ $TestVar: var(--primary-color);
 	&--primary {
 		background: $Theme-major;
 		color: $button-text-color;
-		box-shadow: 0 0 10px 2px $theme-light;
+		box-shadow: none;
 		border-radius: 2em;
       padding: 8px 30px;
+      transition: .2s;
 		
 		&:hover {
-			background: darken($Theme-major, 4%);
+         background: darken($Theme-major, 4%);
+         box-shadow: 0 0 10px 2px $theme-light;
 		}
 		
 		&:active {
@@ -84,14 +86,16 @@ $TestVar: var(--primary-color);
 //** New question ---------------------------------
 .add-q{
    background: $Theme-major;
-   box-shadow: 0 6px 10px 0 $theme-light;
+   box-shadow: none;
    border-radius: 2em;
    color: white;
    display: inline-block;
    cursor: pointer;
+   transition: .2s;
 
    &:hover {
-         background: darken($Theme-major, 4%);
+      background: darken($Theme-major, 4%);
+      box-shadow: 0 6px 10px 0 $theme-light;
    }
 
 
@@ -134,8 +138,9 @@ $TestVar: var(--primary-color);
 
 
    .ques-card{
+      position: relative;
       margin: 0px 10px 10px 0px;
-      padding: 10px 20px 10px 20px;
+      padding: 20px 20px 10px 20px;
       background-color: $theme-light;
       border-radius: 7px;
       cursor: pointer;
@@ -144,9 +149,41 @@ $TestVar: var(--primary-color);
          background: darken($theme-light, 4%);
       }
 
-
-      p{
+      .Linker{
+         position: absolute;
+         top: 0;
+         right: 14px;
+         transform: translateY(-100, -100);
+         display: inline;
+         background: white;
+         border-radius: 0 0 7px 7px;
+         padding: .2em .5em;
          color: $themed-text-color;
+         transition: .3s;
+
+         &:hover{
+            padding: .5em;
+         }
+      }
+
+
+      h3{
+         color: $themed-text-color;
+         text-emphasis: bold;
+      }
+
+      .chips{
+         display: flex;
+         .spacer{flex: 1;}
+         .chip{
+            background: #c5e7ff ;
+            color: $themed-text-color;
+            border: solid 1px white;
+            border-radius: 1em;
+            display: inline-block;
+            padding: 0 1em 0 1em;
+            margin-left: .5em;
+         }
       }
    }
 }
@@ -198,11 +235,12 @@ $TestVar: var(--primary-color);
    margin-left: auto;
    margin-right: auto;
    border-radius: 2em;
-   box-shadow: 0 6px 10px 0 $theme-light;
    cursor: pointer;
-
+   transition: .2s;
+   box-shadow: none;
 
    &:hover{
       background:  darken($Theme-major, 4%);
+      box-shadow: 0 6px 10px 0 $theme-light;
    }
 }
