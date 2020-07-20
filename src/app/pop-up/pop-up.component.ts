@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { YouthService } from '../shared/youth.service';
 import { Questions } from '../shared/questions.model';
+import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
+import { NewQuestionComponent } from './new-question/new-question.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @Component({
   selector: 'app-pop-up',
@@ -25,17 +28,28 @@ export class PopUpComponent implements OnInit {
   primaryColor: string;
   secondaryColor: string;
 
-  constructor(public service : YouthService) {
+  constructor(public service : YouthService, public dialog : MatDialog) {
     this.changeTheme('red', 'yellow'); // Set default theme
   }
 
   changeTheme(primary: string, secondary: string) {
-    document.documentElement.style.setProperty('--primary-color', primary);
-    document.documentElement.style.setProperty('--secondary-color', secondary);
+
   }
 
   onClick() {
-    this.changeTheme('green', 'black');
+    const dialogconfig = new MatDialogConfig();
+    dialogconfig.disableClose = false;
+    dialogconfig.autoFocus = true;
+    dialogconfig.width = "60%";
+    this.dialog.open(ProfileComponent,dialogconfig);
+  }
+
+  newQuestion(){
+    const dialogconfig = new MatDialogConfig();
+    dialogconfig.disableClose = false;
+    dialogconfig.autoFocus = true;
+    dialogconfig.width = "60%";
+    this.dialog.open(NewQuestionComponent,dialogconfig);
   }
 
 

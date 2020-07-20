@@ -7,13 +7,13 @@
    <button type="button" class="btn btn--primary btn--inside uppercase">Search</button>
 </form>
 
-<div class="add-q">
+<div class="add-q" (click)="newQuestion()">
    <span class="material-icons">insights</span>
    <h3>NEW QUESTION</h3>
 </div>
 
 
-<div class="item-list">
+<div class="item-list" >
    <div class="question-list custom-scrollbar-js">
 
       <div class="ques-card" *ngFor="let q of this.QuestionList">

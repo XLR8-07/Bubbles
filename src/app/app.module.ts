@@ -10,11 +10,15 @@ import { PopUpComponent } from './pop-up/pop-up.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { YouthService } from './shared/youth.service';
 import { MaterialModule } from './material/material.module';
+import { NewQuestionComponent } from './pop-up/new-question/new-question.component';
+import { ProfileComponent } from './pop-up/profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PopUpComponent
+    PopUpComponent,
+    NewQuestionComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -26,6 +30,6 @@ import { MaterialModule } from './material/material.module';
   ],
   providers: [YouthService],
   bootstrap: [AppComponent],
-  entryComponents:[PopUpComponent]
+  entryComponents:[PopUpComponent,NewQuestionComponent,ProfileComponent]
 })
 export class AppModule { }
