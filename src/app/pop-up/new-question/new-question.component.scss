@@ -1,0 +1,48 @@
+$theme-light: #95d3ff;
+$Theme-major: #85caff;
+$theme-extra-light: #d1ecff;
+$themed-text-color: #325f92;
+
+.navbar{
+   background: $Theme-major;
+   margin-bottom: 2em;
+   box-shadow: 0 6px 8px 0 $theme-extra-light ;
+   
+   a{
+      color: white;
+   }
+
+   .Closer{
+      font-size: 30px;
+      color: white;
+
+      &:hover{
+         color: $themed-text-color;
+         cursor: pointer;
+      }
+
+   }
+}
+
+.container{
+   flex-direction: row;
+   width: 100%;
+
+   .spacer{
+      width: auto;
+   }
+   
+   .form{
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+
+      .Regular-in-field {
+         width: 100%;
+      }
+
+      .Regular-large-field {
+         width: 100%;
+      }
+   }
+}
