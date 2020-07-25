@@ -15,14 +15,19 @@
 
       <mat-form-field class="Regular-large-field">
          <mat-label>DESCRIPTION</mat-label>
-         <textarea matInput placeholder="Details about your question"></textarea>
+         <textarea matInput placeholder="Details about your question" rows="7"></textarea>
       </mat-form-field>
 
-      <mat-form-field class="Regular-in-field">
-         <mat-label>TAGS</mat-label>
-         <input matInput placeholder="i.e. BCS">
-      </mat-form-field>
-      <button mat-button color="primary">Primary</button>
+      <div class="tagger">
+
+         <mat-form-field class="Regular-in-field">
+            <mat-label>TAGS</mat-label>
+            <input matInput placeholder="i.e. BCS">
+         </mat-form-field>
+
+         <button mat-button color="primary">ADD THIS TAG</button>
+
+      </div>
    
       <mat-form-field class="Regular-in-field">
          <mat-label>RELATED LINKS</mat-label>
