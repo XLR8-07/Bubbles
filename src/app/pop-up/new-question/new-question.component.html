@@ -7,34 +7,36 @@
 
 <div class="container">
    <div class="spacer"></div>
-   <form class="form">
+   <form [formGroup]="this.questionFormData" class="form" (submit) = "onSubmit()">
       <mat-form-field class="Regular-in-field">
          <mat-label>QUESTION</mat-label>
-         <input matInput placeholder="What do you want to know?">
+         <input formControlName="Q" matInput placeholder="What do you want to know?">
       </mat-form-field>
 
       <mat-form-field class="Regular-large-field">
          <mat-label>DESCRIPTION</mat-label>
-         <textarea matInput placeholder="Details about your question" rows="7"></textarea>
+         <textarea formControlName="Details" matInput placeholder="Details about your question" rows="7"></textarea>
       </mat-form-field>
 
-      <div class="tagger">
-
-         <mat-form-field class="Regular-in-field">
-            <mat-label>TAGS</mat-label>
-            <input matInput placeholder="i.e. BCS">
-         </mat-form-field>
-
-         <button mat-button color="primary">ADD THIS TAG</button>
-
-      </div>
+      <mat-form-field class="Tag-list">
+         <mat-chip-list #chipList aria-label="Add Tags">
+            <mat-chip *ngFor="let t of Taglist" [selectable]="selectable" [removable]="removable"
+               (removed)="remove(t)">
+               {{t}}
+               <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+            <input placeholder="Add Tags" [matChipInputFor]="chipList"
+               [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+               (matChipInputTokenEnd)="addTag($event)">
+         </mat-chip-list>
+      </mat-form-field>
    
       <mat-form-field class="Regular-in-field">
          <mat-label>RELATED LINKS</mat-label>
-         <input matInput placeholder="i.e. Google.com">
+         <input formControlName="Link" matInput placeholder="i.e. Google.com">
       </mat-form-field>
 
-      <button mat-flat-button color="primary">Primary</button>
+      <button mat-flat-button mat-dialog-close color="primary" type="submit" >SUBMIT</button>
    
    </form>
    <div class="spacer"></div>

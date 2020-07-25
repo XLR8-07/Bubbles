@@ -1,3 +1,4 @@
+import { Questions } from './questions.model';
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 
@@ -10,5 +11,11 @@ export class YouthService {
 
   getQuestions(){
     return this.firestore.collection('Questions').snapshotChanges();
+  }
+
+  insertNewQuestion(qFormData : Questions){
+    this.firestore.collection('Questions').add(qFormData).then(() => {
+      console.log('Data vorse');
+    })
   }
 }
