@@ -14,6 +14,10 @@ import { NewQuestionComponent } from './pop-up/new-question/new-question.compone
 import { ProfileComponent } from './pop-up/profile/profile.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatButtonModule } from '@angular/material/button';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,11 @@ import { MatButtonModule } from '@angular/material/button';
     MaterialModule,
     MatInputModule,
     MatGridListModule,
-    MatButtonModule
+    MatButtonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatChipsModule,
+    MatIconModule
   ],
   providers: [YouthService],
   bootstrap: [AppComponent],
