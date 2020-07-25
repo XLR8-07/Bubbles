@@ -3,4 +3,5 @@ export class Questions {
     Link: string;
     Q: string;
     Topic: string;
+    Tags: string[];
 }
