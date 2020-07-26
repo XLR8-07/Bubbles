@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
+  profession : string[] = ['CG-Artist', 'Motion Designer', 'Senior Concept Artist'];
+
   constructor() { }
 
   ngOnInit(): void {

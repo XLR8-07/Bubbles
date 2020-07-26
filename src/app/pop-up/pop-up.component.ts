@@ -40,7 +40,7 @@ export class PopUpComponent implements OnInit {
     const dialogconfig = new MatDialogConfig();
     dialogconfig.disableClose = false;
     dialogconfig.autoFocus = true;
-    dialogconfig.width = "60%";
+    dialogconfig.width = "80%";
     this.dialog.open(ProfileComponent,dialogconfig);
   }
 
