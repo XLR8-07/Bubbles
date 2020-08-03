@@ -11,6 +11,7 @@
       <mat-form-field class="Regular-in-field">
          <mat-label>QUESTION</mat-label>
          <input formControlName="Q" matInput placeholder="What do you want to know?">
+         <mat-error *ngIf="this.questionFormData.controls['Q'].hasError('required')">Please enter your question</mat-error>
       </mat-form-field>
 
       <mat-form-field class="Regular-large-field">
@@ -39,7 +40,7 @@
       </mat-form-field>
 
 
-      <button mat-flat-button mat-dialog-close color="primary" type="submit" >SUBMIT</button>
+      <button mat-flat-button color="primary" type="submit" >SUBMIT</button>
 
    
    </form>

@@ -14,8 +14,10 @@ export class YouthService {
   }
 
   insertNewQuestion(qFormData : Questions){
-    this.firestore.collection('Questions').add(qFormData).then(() => {
-      console.log('Data vorse');
-    })
+    return this.firestore.collection('Questions').add(qFormData)
+  }
+
+  getProfiles(){
+    return this.firestore.collection('Profiles').snapshotChanges();
   }
 }
