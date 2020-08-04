@@ -208,16 +208,55 @@ $TestVar: var(--primary-color);
       background-color: $Theme-major;
       border-radius: 7px;
       cursor: pointer;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
 
       &:hover {
          background: darken($Theme-major, 4%);
       }
 
-      height: 200px;          //temp
+      .image{
+         margin-right: 15px;
+         margin-top: 10px;
+         justify-self: start;
+         
+         img{
+            display: inline-block;
+            width: 100px;
+            border-radius: 10px;
+         }
+      }
 
-      .p{
-         font-size: 10px;
-         color: $text;
+      .details{
+         display: inline-block;
+         margin-top: 5px;
+
+         h1{
+            color: white;
+            margin: 0;
+         }
+
+         .rating{
+            font-size: 20px;
+            display: inline;
+         }
+      }
+
+      .chips{
+         flex-basis: 100%;
+         margin-top: 20px;
+         display: flex;
+         .spacer{flex: 1;}
+         .chip{
+            background: white ;
+            color: $themed-text-color;
+            border: solid 1px white;
+            border-radius: 1em;
+            display: inline-block;
+            padding: 0 1em 0 1em;
+            margin-left: .5em;
+         }
       }
    }
 }

@@ -9,7 +9,7 @@ import { Profiles } from 'src/app/shared/profiles.model';
 })
 export class ProfileComponent implements OnInit {
 
-  profession : string[] = ['CG-Artist', 'Motion Designer', 'Senior Concept Artist'];
+  // profession : string[] = ['CG-Artist', 'Motion Designer', 'Senior Concept Artist'];
   
 
   constructor(public service : YouthService) { }

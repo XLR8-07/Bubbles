@@ -5,7 +5,7 @@ export class Profiles {
     Name : string;
     Password : string;
     Phone : string ;
-    Pragraphs : string[];
+    Paragraphs : string[];
     Profession : string;
     Proficiency : string[];
     RatingAVG : number;
