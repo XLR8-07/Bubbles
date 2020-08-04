@@ -9,8 +9,8 @@ import { Profiles } from 'src/app/shared/profiles.model';
 })
 export class ProfileComponent implements OnInit {
 
-  profession : string[] = ['CG-Artist', 'Motion Designer', 'Senior Concept Artist'];
-  profileList : Profiles[];
+  // profession : string[] = ['CG-Artist', 'Motion Designer', 'Senior Concept Artist'];
+  
 
   constructor(public service : YouthService) { }
 
@@ -19,16 +19,7 @@ export class ProfileComponent implements OnInit {
   }
 
   onClickCV(){
-    this.service.getProfiles().subscribe(actionArray2 => {
-      this.profileList = actionArray2.map(item2 => {
-        return {
-          id: item2.payload.doc.id,
-          ...item2.payload.doc.data() as Profiles
-        } as Profiles;
-      })
-      console.log(this.profileList);
-    });
-    
+    console.log("CV clicked")
   }
 
 }

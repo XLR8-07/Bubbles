@@ -1,3 +1,4 @@
+import { Profiles } from 'src/app/shared/profiles.model';
 import { Questions } from './questions.model';
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
@@ -6,6 +7,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
   providedIn: 'root'
 })
 export class YouthService {
+  ClickedProfile : Profiles;
 
   constructor(private firestore: AngularFirestore) { }
 

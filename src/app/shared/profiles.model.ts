@@ -5,11 +5,11 @@ export class Profiles {
     Name : string;
     Password : string;
     Phone : string ;
-    Pragraphs : string[];
+    Paragraphs : string[];
     Profession : string;
     Proficiency : string[];
     RatingAVG : number;
     RatingCunt : number ;
     User_ID : string; 
-
+    Profile_Image : string;
 }

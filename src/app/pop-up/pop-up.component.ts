@@ -4,6 +4,7 @@ import { Questions } from '../shared/questions.model';
 import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
 import { NewQuestionComponent } from './new-question/new-question.component';
 import { ProfileComponent } from './profile/profile.component';
+import { Profiles } from 'src/app/shared/profiles.model';
 
 @Component({
   selector: 'app-pop-up',
@@ -13,6 +14,8 @@ import { ProfileComponent } from './profile/profile.component';
 export class PopUpComponent implements OnInit {
 
   QuestionList : Questions[];
+  profileList : Profiles[];
+  profileLoaded : boolean = false;
 
   ngOnInit(): void {
     this.service.getQuestions().subscribe(actionArray2 => {
@@ -23,10 +26,22 @@ export class PopUpComponent implements OnInit {
         } as Questions;
       })
     });
+
+    this.service.getProfiles().subscribe(actionArray2 => {
+      this.profileList = actionArray2.map(item2 => {
+        return {
+          id: item2.payload.doc.id,
+          ...item2.payload.doc.data() as Profiles
+        } as Profiles;
+      })
+      console.log(this.profileList);
+      this.profileLoaded = true;
+    });
   }
 
   primaryColor: string;
   secondaryColor: string;
+
 
   constructor(public service : YouthService, public dialog : MatDialog) {
     this.changeTheme('red', 'yellow'); // Set default theme
@@ -36,7 +51,10 @@ export class PopUpComponent implements OnInit {
 
   }
 
-  onClick() {
+  ShowProfile(profile : Profiles) {
+    this.service.ClickedProfile = profile;
+    console.log(this.service.ClickedProfile)
+    
     const dialogconfig = new MatDialogConfig();
     dialogconfig.disableClose = false;
     dialogconfig.autoFocus = true;
@@ -51,7 +69,6 @@ export class PopUpComponent implements OnInit {
     dialogconfig.width = "60%";
     this.dialog.open(NewQuestionComponent,dialogconfig);
   }
-
 
 
 }
