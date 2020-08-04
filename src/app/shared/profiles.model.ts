@@ -11,5 +11,5 @@ export class Profiles {
     RatingAVG : number;
     RatingCunt : number ;
     User_ID : string; 
-
+    Profile_Image : string;
 }

@@ -33,31 +33,10 @@
    </div>
    
    
-   <div class="mentor-list custom-scrollbar-js">
+   <div class="mentor-list custom-scrollbar-js" *ngIf = "profileLoaded">
 
-      <div class="Prof-card" (click)="onClick()">
-
-      </div>
-      <div class="Prof-card">
-
-      </div>
-      <div class="Prof-card">
-
-      </div>
-      <div class="Prof-card">
-
-      </div>
-      <div class="Prof-card">
-
-      </div>
-      <div class="Prof-card">
-
-      </div>
-      <div class="Prof-card">
-
-      </div>
-      <div class="Prof-card">
-
+      <div class="Prof-card" (click)="ShowProfile(profile)" *ngFor="let profile of this.profileList">
+         {{profile.Name}}
       </div>
 
       <div class="loader">

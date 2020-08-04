@@ -2,59 +2,37 @@
    <div class="profile">
       <div class="intro-row">
       
-         <img src="https://www.fairtravel4u.org/wp-content/uploads/2018/06/sample-profile-pic-300x300.png"
+         <img src={{this.service.ClickedProfile.Profile_Image}}
             alt="https://lh3.googleusercontent.com/proxy/wJp9Sew77MCPyeqlYrXJ09D92O6cw9l_jIcaV1kLUPw8gEYEzQS4-MGPwf77xRXULUAuYUXgqgBFB7OIu_GhjI-aFHw7k03hLKjyNz7AaEICcfiTqODg46fVO4KFJz09-n-t4qvNUuLbVbfyWQ">
       
          <div class="name-id">
       
-            <h1>NAME OF THE PERSON</h1>
+            <h1>{{this.service.ClickedProfile.Name}}</h1>
       
-            <h3>HIS PROFESSION</h3>
+            <h3>{{this.service.ClickedProfile.Profession}}</h3>
       
-            <h4>From : Dhaka, Bangladesh</h4>
+            <h4>From : {{this.service.ClickedProfile.Address}}</h4>
       
          </div>
       </div>
       
       <div class="prfsion">
-      
-         <div class="tags" *ngFor="let p of this.profession">{{p}}</div>
-      
+         <div class="tags" *ngFor="let pro of this.service.ClickedProfile.Proficiency">{{pro}}</div>
       </div>
       
       <div class="descrip">
-         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem quis quaerat earum dolorem? Saepe
-            expedita dolores dignissimos est aspernatur earum facere, accusantium ut odio perspiciatis at modi delectus quam
-            maxime dicta corporis, quisquam dolor fugit alias? Maxime sint odit dicta, velit numquam, accusamus recusandae
-            veritatis suscipit debitis voluptas, sequi ea nostrum et dolor voluptatibus repudiandae pariatur! Blanditiis, nemo
-            inventore, doloremque doloribus quidem suscipit cupiditate ad numquam autem quos consequatur, in veniam asperiores
-            sed quia. Dolores ea nemo maiores possimus. Odio, in facere. Quia, recusandae, est rerum, quod beatae eaque quos
-            odio corrupti consequuntur aliquid possimus voluptates? Minima velit nihil veritatis!</p>
-      
-         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur aut quidem, libero quia quis ea repellendus?
-            Dolores, magnam rerum blanditiis, odio labore ipsum tempora culpa laboriosam ea, commodi assumenda? Nihil modi aut
-            optio, consequatur magnam repellat perferendis. Reprehenderit similique fugit magnam ipsa aliquid eaque,
-            recusandae consequatur labore eius. Sed aliquid, consequuntur adipisci animi debitis voluptates ducimus? Illum
-            atque officiis labore temporibus fugiat similique fuga itaque doloremque nemo nihil dolore reprehenderit sint
-            corrupti iste, harum, accusamus accusantium doloribus quis repellendus consectetur veritatis rem. Tenetur
-            voluptatibus repudiandae odit rem explicabo culpa rerum vitae saepe labore ducimus sed debitis ratione dolores
-            soluta, quasi molestiae hic delectus eligendi placeat? Ducimus adipisci blanditiis est consectetur in ut, aliquid
-            facere ipsam earum veritatis aperiam facilis sequi cupiditate nesciunt itaque eius, quasi eos? Dolore suscipit
-            necessitatibus, sequi facere amet quis obcaecati nesciunt consequatur porro praesentium cumque quasi tenetur.
-            Accusamus quis saepe perspiciatis ipsam eos esse quas, dolor perferendis dicta aliquam itaque assumenda iusto
-            maiores, nemo blanditiis neque officiis a ratione sed ab? Doloremque quae consectetur sit consequatur, culpa
-            corporis corrupti vitae nihil eius illo obcaecati laborum repudiandae excepturi molestiae. Ea recusandae sed
-            ipsum? Amet animi accusamus dolor minus cum modi, eveniet repellendus maiores fuga aspernatur, eius iusto!</p>
+         <p *ngFor="let p of this.service.ClickedProfile.Pragraphs">{{p}}</p>
       </div>
       
       <div class="cont">
          <h3>Contact Info</h3>
-         <h4>Email : iamabcd@any-email.com</h4>
-         <h4>Phone : +880 XXXXXXXXXXXXX</h4>
+         <h4>Email : {{this.service.ClickedProfile.Email}}</h4>
+         <h4>Phone : {{this.service.ClickedProfile.Phone}}</h4>
       </div>
 
       <div class="rating">
-         <h1>4.7/5</h1>
+         <h1>{{this.service.ClickedProfile.RatingAVG}}/5</h1>
+          by {{this.service.ClickedProfile.RatingCunt}} votes
       </div>
 
       <div class="cv">
