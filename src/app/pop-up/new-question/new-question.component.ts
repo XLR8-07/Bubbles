@@ -46,12 +46,10 @@ export class NewQuestionComponent implements OnInit {
     const input = event.input;
     const value = event.value;
 
-    // Add our fruit
     if ((value || '').trim()) {
       this.Taglist.push(value.trim());
     }
 
-    // Reset the input value
     if (input) {
       input.value = '';
     }

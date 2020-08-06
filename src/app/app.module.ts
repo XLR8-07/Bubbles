@@ -18,6 +18,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
+import { ProfileFromComponent } from './profile-from/profile-from.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { MatIconModule } from '@angular/material/icon';
     PopUpComponent,
     NewQuestionComponent,
     ProfileComponent,
+    ProfileFromComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +45,6 @@ import { MatIconModule } from '@angular/material/icon';
   ],
   providers: [YouthService],
   bootstrap: [AppComponent],
-  entryComponents: [PopUpComponent, NewQuestionComponent, ProfileComponent],
+  entryComponents: [PopUpComponent, NewQuestionComponent, ProfileComponent,ProfileFromComponent],
 })
 export class AppModule {}

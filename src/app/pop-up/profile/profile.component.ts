@@ -8,8 +8,6 @@ import { Profiles } from 'src/app/shared/profiles.model';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-
-  // profession : string[] = ['CG-Artist', 'Motion Designer', 'Senior Concept Artist'];
   
 
   constructor(public service : YouthService) { }

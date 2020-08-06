@@ -53,8 +53,6 @@ export class PopUpComponent implements OnInit {
 
   ShowProfile(profile : Profiles) {
     this.service.ClickedProfile = profile;
-    console.log(this.service.ClickedProfile)
-    
     const dialogconfig = new MatDialogConfig();
     dialogconfig.disableClose = false;
     dialogconfig.autoFocus = true;

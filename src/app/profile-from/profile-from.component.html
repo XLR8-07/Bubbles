@@ -1,0 +1,71 @@
+<nav class="navbar">
+   <a class="navbar-brand">REGISTER</a>
+   <span mat-dialog-close class="material-icons Closer">
+      close
+   </span>
+</nav>
+
+<div class="container">
+   <div class="spacer"></div>
+   <form class="form" >
+      <mat-form-field class="Regular-short-field">
+         <mat-label>Name</mat-label>
+         <input matInput placeholder="What is your name?">
+      </mat-form-field>
+      
+      <mat-form-field class="Regular-short-field">
+         <mat-label>Password</mat-label>
+         <input type="password" matInput placeholder="Atleast 8 charecter long">
+      </mat-form-field>
+
+      <mat-form-field class="Regular-short-field">
+         <mat-label>Email</mat-label>
+         <input matInput type="email" placeholder="Provide your Email">
+      </mat-form-field>
+      
+      <mat-form-field class="Regular-short-field">
+         <mat-label>Work</mat-label>
+         <input matInput placeholder="Profession">
+      </mat-form-field>
+      
+      <mat-form-field class="Regular-short-field">
+         <mat-label>Phone no</mat-label>
+         <input matInput placeholder="Your Phone no">
+      </mat-form-field>
+
+      <mat-form-field class="Regular-in-field">
+         <mat-label>Pic</mat-label>
+         <input matInput placeholder="Put your image URL here">
+      </mat-form-field>
+
+      <mat-form-field class="Regular-in-field">
+         <mat-label>Address</mat-label>
+         <input matInput placeholder="Where do you live?">
+      </mat-form-field>
+
+      <mat-form-field class="Regular-in-field">
+         <mat-label>DESCRIPTION</mat-label>
+         <textarea matInput placeholder="Say something about youeself" rows="7"></textarea>
+      </mat-form-field>
+
+      <mat-form-field class="Tag-list">
+         <mat-chip-list #chipList aria-label="Hobby">
+            <mat-chip *ngFor="let t of Taglist" [selectable]="selectable" [removable]="removable" (removed)="remove(t)">
+               {{t}}
+               <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+            <input placeholder="Proficiencies" [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+               [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="addTag($event)">
+         </mat-chip-list>
+      </mat-form-field>
+      
+      <mat-form-field class="Regular-in-field">
+         <mat-label>CV</mat-label>
+         <input matInput placeholder="Put your CV file link here">
+      </mat-form-field>
+
+      <button mat-flat-button color="primary" type="submit">CREATE</button>
+
+   </form>
+   <div class="spacer"></div>
+</div>
