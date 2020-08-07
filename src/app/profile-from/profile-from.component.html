@@ -7,45 +7,45 @@
 
 <div class="container">
    <div class="spacer"></div>
-   <form class="form" >
+   <form [formGroup]="this.profileFormData" class="form" (submit)="onSubmit()" >
       <mat-form-field class="Regular-short-field">
          <mat-label>Name</mat-label>
-         <input matInput placeholder="What is your name?">
+         <input formControlName="Name" matInput placeholder="What is your name?">
       </mat-form-field>
       
       <mat-form-field class="Regular-short-field">
          <mat-label>Password</mat-label>
-         <input type="password" matInput placeholder="Atleast 8 charecter long">
+         <input formControlName="Password" type="password" matInput placeholder="Atleast 8 charecter long">
       </mat-form-field>
 
       <mat-form-field class="Regular-short-field">
          <mat-label>Email</mat-label>
-         <input matInput type="email" placeholder="Provide your Email">
+         <input formControlName="Email" matInput type="email" placeholder="Provide your Email">
       </mat-form-field>
       
       <mat-form-field class="Regular-short-field">
          <mat-label>Work</mat-label>
-         <input matInput placeholder="Profession">
+         <input formControlName="Profession" matInput placeholder="Profession">
       </mat-form-field>
       
       <mat-form-field class="Regular-short-field">
          <mat-label>Phone no</mat-label>
-         <input matInput placeholder="Your Phone no">
+         <input formControlName="Phone" matInput placeholder="Your Phone no">
       </mat-form-field>
 
       <mat-form-field class="Regular-in-field">
          <mat-label>Pic</mat-label>
-         <input matInput placeholder="Put your image URL here">
+         <input formControlName="Profile_Image" matInput placeholder="Put your image URL here">
       </mat-form-field>
 
       <mat-form-field class="Regular-in-field">
          <mat-label>Address</mat-label>
-         <input matInput placeholder="Where do you live?">
+         <input formControlName="Address" matInput placeholder="Where do you live?">
       </mat-form-field>
 
       <mat-form-field class="Regular-in-field">
          <mat-label>DESCRIPTION</mat-label>
-         <textarea matInput placeholder="Say something about youeself" rows="7"></textarea>
+         <textarea (keydown.enter)="search($event.target.value)" matInput placeholder="Say something about youeself" rows="7"></textarea>
       </mat-form-field>
 
       <mat-form-field class="Tag-list">
@@ -61,8 +61,10 @@
       
       <mat-form-field class="Regular-in-field">
          <mat-label>CV</mat-label>
-         <input matInput placeholder="Put your CV file link here">
+         <input matInput formControlName="CV" placeholder="Put your CV file link here">
       </mat-form-field>
+
+      <input type="file">
 
       <button mat-flat-button color="primary" type="submit">CREATE</button>
 
