@@ -13,6 +13,11 @@ $themed-text-color: #325f92;
 .page-titile{
    color: rgb(154, 65, 255);
    padding: .4em;
+   display: flex;
+
+   .spacer{
+      flex: auto;
+   }
 }
 
 .Profile{
