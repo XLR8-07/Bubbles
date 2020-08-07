@@ -16,7 +16,11 @@ export class YouthService {
   }
 
   insertNewQuestion(qFormData : Questions){
-    return this.firestore.collection('Questions').add(qFormData)
+    return this.firestore.collection('Questions').add(qFormData);
+  }
+
+  insertProfileForm(pFormData : Profiles){
+    return this.firestore.collection('Profiles').add(pFormData);
   }
 
   getProfiles(){

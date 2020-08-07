@@ -17,7 +17,8 @@ export class ProfileComponent implements OnInit {
   }
 
   onClickCV(){
-    console.log("CV clicked")
+    let link = this.service.ClickedProfile.CV;
+    window.open(link);
   }
 
 }

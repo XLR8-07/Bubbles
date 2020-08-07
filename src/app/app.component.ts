@@ -27,7 +27,8 @@ export class AppComponent {
     const ProfileDialog = new MatDialogConfig();
     ProfileDialog.disableClose = false;
     ProfileDialog.autoFocus = true;
-    ProfileDialog.width = "70%";
+    ProfileDialog.width = "45%";
+    ProfileDialog.height = "100vh"
     this.dialog.open(ProfileFromComponent, ProfileDialog);
   }
 }
