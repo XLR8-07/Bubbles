@@ -19,6 +19,12 @@ import { FormsModule } from '@angular/forms';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { ProfileFromComponent } from './profile-from/profile-from.component';
+import { AuthService } from './shared/auth.service';
+import {MatTabsModule} from '@angular/material/tabs';
+import { AuthComponent } from './auth/auth.component';
+import { LoginComponent } from './auth/login/login.component';
+import { SignUpComponent } from './auth/sign-up/sign-up.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -27,6 +33,9 @@ import { ProfileFromComponent } from './profile-from/profile-from.component';
     NewQuestionComponent,
     ProfileComponent,
     ProfileFromComponent,
+    AuthComponent,
+    LoginComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,10 +50,13 @@ import { ProfileFromComponent } from './profile-from/profile-from.component';
     ReactiveFormsModule,
     FormsModule,
     MatChipsModule,
-    MatIconModule
+    MatIconModule,
+    AngularFireModule,
+    MatTabsModule,
+    MatFormFieldModule
   ],
-  providers: [YouthService],
+  providers: [YouthService,AuthService],
   bootstrap: [AppComponent],
-  entryComponents: [PopUpComponent, NewQuestionComponent, ProfileComponent,ProfileFromComponent],
+  entryComponents: [PopUpComponent, NewQuestionComponent, ProfileComponent,ProfileFromComponent,AuthComponent],
 })
 export class AppModule {}

@@ -1,0 +1,19 @@
+<form [formGroup]="this.signUpForm" autocomplete="off" (submit)="onSubmit()">
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="Email" placeholder="someone@example.com">
+            <mat-icon matSuffix>email</mat-icon>
+        </mat-form-field>
+      <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Enter your password</mat-label>
+            <input matInput formControlName="Password" [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>
+    </p>
+    <p>
+        <button class="select-btn" type="submit" mat-raised-button color="primary"> S I G N U P </button>
+    </p>
+</form>
