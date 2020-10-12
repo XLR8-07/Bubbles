@@ -25,6 +25,8 @@ import { AuthComponent } from './auth/auth.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatCardModule} from '@angular/material/card';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatIconModule,
     AngularFireModule,
     MatTabsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatCardModule,
+    MatToolbarModule
   ],
   providers: [YouthService,AuthService],
   bootstrap: [AppComponent],

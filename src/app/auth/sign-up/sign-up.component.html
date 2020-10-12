@@ -1,19 +1,33 @@
-<form [formGroup]="this.signUpForm" autocomplete="off" (submit)="onSubmit()">
-        <mat-form-field appearance="outline">
-            <mat-label>Email</mat-label>
-            <input matInput formControlName="Email" placeholder="someone@example.com">
-            <mat-icon matSuffix>email</mat-icon>
-        </mat-form-field>
-      <p>
-        <mat-form-field appearance="outline">
-            <mat-label>Enter your password</mat-label>
-            <input matInput formControlName="Password" [type]="hide ? 'password' : 'text'">
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
-        </mat-form-field>
-    </p>
-    <p>
-        <button class="select-btn" type="submit" mat-raised-button color="primary"> S I G N U P </button>
-    </p>
-</form>
+<mat-card class="example-card">
+    <mat-toolbar color="primary">
+        <mat-icon>person_add</mat-icon>
+        <span>SIGN UP</span>
+    </mat-toolbar>
+    <div class="form">
+        <form [formGroup]="this.signUpForm" autocomplete="off" (submit)="onSubmit()">
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="Email" placeholder="someone@example.com">
+                    <mat-icon matSuffix>email</mat-icon>
+                </mat-form-field>
+            
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter your password</mat-label>
+                    <input matInput formControlName="Password" [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+                <br>
+                <div>
+                    <img [src]="imgSrc" width="250px" height="200px">
+                </div>
+                    <mat-label>Profile Image</mat-label>
+                    <input #imageInput formControlName="imageURL" type="file" accept="image/*" (change)="showPreview($event)" placeholder="someone.jpg">
+            
+                <button class="select-btn" type="submit" mat-raised-button color="primary"> S I G N U P </button>
+            
+        </form>
+
+    </div>
+</mat-card>
