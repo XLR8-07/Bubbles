@@ -20,7 +20,7 @@
                 </mat-form-field>
                 <br>
                 <div>
-                    <img [src]="imgSrc" width="250px" height="200px">
+                    <img [src]="imgSrc" width="250px" height="200px" (click)="imageInput.click()">
                 </div>
                     <mat-label>Profile Image</mat-label>
                     <input #imageInput formControlName="imageURL" type="file" accept="image/*" (change)="showPreview($event)" placeholder="someone.jpg">
