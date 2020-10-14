@@ -1,11 +1,36 @@
 .form{
-    margin-left: 2em;
+    display: flex;
+    margin-top: 1em;
+    flex-direction: row;
 }
 
-// .example-card {
-//     max-width: 400px;
-//   }
 
-.example-full-width {
-    width: 100%;
-  }
+
+.input-fields{
+    flex: 1.5;
+    display: inline-block;
+
+    mat-form-field{
+        width: 100%;
+    }
+}
+
+.add_file{
+    flex: 1;
+    display: inline-block;
+    margin-left: 1em;
+    -ms-flex-align: end;
+
+    button{
+        position: absolute;
+        transform: translate(-19%, -50%);
+        bottom: 0;
+        right: 0;
+    }
+
+    .img{
+        display: flex;
+        justify-content: center;
+    }
+
+}

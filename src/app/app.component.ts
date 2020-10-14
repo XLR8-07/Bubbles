@@ -37,8 +37,8 @@ export class AppComponent {
     const AuthDialog = new MatDialogConfig();
     AuthDialog.disableClose = false;
     AuthDialog.autoFocus = true;
-    AuthDialog.width = "20%";
-    // AuthDialog.height = "40vh"
+    AuthDialog.maxWidth = "80%";
+    AuthDialog.maxHeight = "90vh"
     this.dialog.open(AuthComponent, AuthDialog);
   }
 }
