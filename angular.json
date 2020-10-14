@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "Bubbles"
+  "defaultProject": "Bubbles",
+  "cli": {
+    "analytics": false
+  }
 }
