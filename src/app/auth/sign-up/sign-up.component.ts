@@ -3,11 +3,13 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/shared/auth.service';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
+import { AngularFireStorage, AngularFireStorageModule } from '@angular/fire/storage';
+import { finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.scss']
+  styleUrls: ['./sign-up.component.scss'] 
 })
 export class SignUpComponent implements OnInit {
 
@@ -35,7 +37,7 @@ export class SignUpComponent implements OnInit {
     Job : new FormControl('',Validators.required)
   })
 
-  constructor(public Authservice: AuthService) { }
+  constructor(public Authservice: AuthService, private storage: AngularFireStorage) { }
 
   ngOnInit(): void {
   }
@@ -86,6 +88,14 @@ export class SignUpComponent implements OnInit {
       this.imgSrc = '/assets/img/image_placeholder2.png';
       this.selectedImage = null;
     }
+  }
+  testClick(){
+    var filePath = `userImages/${this.selectedImage.name}`;
+    this.storage.upload(filePath,this.selectedImage).snapshotChanges().pipe(
+      finalize(()=>{})
+    ).subscribe(()=>{
+      console.log('Photo dhukise dada');
+    })
   }
 
 }
