@@ -2,13 +2,15 @@
     display: flex;
     margin-top: 1em;
     flex-direction: row;
+    min-width: 600px;
 }
 
 
 
 .input-fields{
-    flex: 1.5;
+    flex: 3;
     display: inline-block;
+    min-width: 50%;
 
     mat-form-field{
         width: 100%;
@@ -31,6 +33,10 @@
     .img{
         display: flex;
         justify-content: center;
+        flex-direction: column;
+        margin: 0 40px 0 40px;
+        text-align: center;
+        cursor: pointer;
     }
 
 }
