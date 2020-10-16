@@ -46,7 +46,9 @@ export class SignUpComponent implements OnInit {
     let email = this.signUpForm.controls.Email.value;
     let password = this.signUpForm.controls.Password.value;
     console.log(email,password);
-    this.Authservice.signUp(email,password);
+    this.testClick();
+    this.Authservice.signUp(this.signUpForm);
+    this.resetSignUpForm();
   }
 
   addTag(event: MatChipInputEvent): void {
@@ -91,11 +93,33 @@ export class SignUpComponent implements OnInit {
   }
   testClick(){
     var filePath = `userImages/${this.selectedImage.name}`;
+    const fileRef = this.storage.ref(filePath);
     this.storage.upload(filePath,this.selectedImage).snapshotChanges().pipe(
-      finalize(()=>{})
+      finalize(()=>{
+        fileRef.getDownloadURL().subscribe((url)=>{
+          this.signUpForm.controls['imageURL'].setValue(url)
+        })
+      })
     ).subscribe(()=>{
-      console.log('Photo dhukise dada');
     })
+  }
+
+  resetSignUpForm(){
+    this.signUpForm.reset();
+    this.Taglist = [];
+    this.signUpForm.setValue({
+      Name : '',
+      Email : '',
+      Password : '',
+      Work : '',
+      PhoneNo : '',
+      imageURL : '',
+      Address : '',
+      Description : '',
+      Proficiency: this.Taglist,
+      Job : ''    
+    });
+    this.imgSrc = '/assets/img/image_placeholder2.png';
   }
 
 }

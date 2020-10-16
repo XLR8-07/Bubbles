@@ -1,20 +1,21 @@
-import { Component } from '@angular/core';
-import { MatDialogConfig, MatDialog } from '@angular/material/dialog';
+import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { AuthComponent } from './auth/auth.component';
-import { PopUpComponent } from './pop-up/pop-up.component';
-import { ProfileFromComponent } from './profile-from/profile-from.component';
+import { AuthComponent } from '../auth/auth.component';
+import { PopUpComponent } from '../pop-up/pop-up.component';
+import { ProfileFromComponent } from '../profile-from/profile-from.component';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-home-page',
+  templateUrl: './home-page.component.html',
+  styleUrls: ['./home-page.component.scss']
 })
+export class HomePageComponent implements OnInit {
 
-export class AppComponent {
   title = 'Bubbles';
-  constructor(private dialog : MatDialog, private router: Router){
-    
+  constructor(private dialog : MatDialog, private router: Router) { }
+
+  ngOnInit(): void {
   }
 
   onClick(){
@@ -46,4 +47,5 @@ export class AppComponent {
   DashBoardTestClick(){
     this.router.navigate(['dashboard']);
   }
+
 }

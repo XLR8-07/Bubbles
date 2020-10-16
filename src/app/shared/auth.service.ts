@@ -20,15 +20,24 @@ export class AuthService {
     this.userStatusChanges.next(userStatus);
   }
 
-  signUp(email:string, password:string){
-     
+  signUp(signUpFormData){
+    console.log(signUpFormData);
+     let email = signUpFormData.controls['Email'].value;
+     let password = signUpFormData.controls['Password'].value;
     this.afAuth.createUserWithEmailAndPassword(email,password)
     .then((userResponse)=>{
       //add user to the 'Users' collection
       let user = {
         id: userResponse.user.uid,
-        username : userResponse.user.email,
-        role: false,
+        email : userResponse.user.email,
+        role: 'regular',
+        Work : signUpFormData.controls['Work'].value,
+        PhoneNo : signUpFormData.controls['PhoneNo'].value,
+        imageURL : signUpFormData.controls['imageURL'].value,
+        Address : signUpFormData.controls['Address'].value,
+        Description : signUpFormData.controls['Description'].value,
+        Proficiency: signUpFormData.controls['Proficiency'].value,
+        Job : signUpFormData.controls['Job'].value
       }
 
       this.firestore.collection("Users").add(user)

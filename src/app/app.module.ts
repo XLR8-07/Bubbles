@@ -28,6 +28,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {AngularFireStorageModule} from '@angular/fire/storage';
+import { DashBoardComponent } from './dash-board/dash-board.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import {AngularFireStorageModule} from '@angular/fire/storage';
     AuthComponent,
     LoginComponent,
     SignUpComponent,
+    DashBoardComponent,
+    HomePageComponent,
   ],
   imports: [
     BrowserModule,
