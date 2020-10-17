@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashBoardComponent implements OnInit {
 
+  listOfDom: string[] = ['job', 'Tour', 'Drawing', 'Fishing']
+
   constructor() { }
 
   ngOnInit(): void {
