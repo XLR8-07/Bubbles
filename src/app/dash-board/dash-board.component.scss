@@ -5,34 +5,118 @@
         "menu activity activity activity feed"
     ;
     grid-auto-rows: minmax(100px, auto);
-
-    // background-color: beige;
     max-width: 100%;
+    padding: 0;
+
+
+    .status-bar{
+        grid-area: stat;
+        background: #eee;
+        display: grid;
+        grid-template-areas:
+            'title title'
+            'text-info graph-info'
+        ;
+
+        h2{
+            grid-area: title;
+            background-color: cornflowerblue;
+            align-self: start;
+            margin: 0;
+            padding: 0 0 0 1em;
+            height: auto;
+        }
+        
+        .info{
+            grid-area: text-info;
+            padding: 1em;
+        }
+
+        .graph{
+            grid-area: graph-info;
+            border-left: #DDD 2px solid;
+            padding: 1em;
+        }
+
+
+    }
+    
+    .prof-view{
+        grid-area: prof;
+        padding: 1em;
+        display: flex;
+        flex-direction: row;
+        max-width: 150px;
+        
+
+        img{
+            width: 150px;
+        }
+
+        .text{
+            padding-left: 1em;
+            min-width: 100px;
+        }
+    }
+    
+    .menu{
+        grid-area: menu;
+        background: #bbb;
+        justify-content: center;
+        align-content: center;
+    }
+    
+    .job-Updates{
+        grid-area: activity;
+        background: #999;
+        display: flex;
+        flex-direction: column;
+
+        // :first-child{
+        //     border-bottom: solid #ccc 1px;
+        //     height: 10vh;
+        // }
+
+        .current-jobs{
+            border-bottom: solid #ccc 1px;
+            min-height: 10vh;
+        }
+
+        .act-of-asked{
+            border-bottom: solid #ccc 1px;
+            min-height: 10vh;
+
+        }
+
+        .act-of-followed{
+            border-bottom: solid #ccc 1px;
+            min-height: 10vh;
+
+        }
+    }
+    
+    .feed{
+        grid-area: feed;
+        background: #bbb;
+        display: flex;
+        flex-direction: column;
+
+        .post-job{
+            height: 5vh;
+            background: cornflowerblue;
+            border: solid 1px blue;
+            border-radius: 5px ;
+        }
+        
+        .post-question{
+            height: 5vh;
+            background: cornflowerblue;
+            border: solid 1px blue;
+            border-radius: 5px ;
+        }
+    }
 }
 
-.status-bar{
-    grid-area: stat;
-    background: #eee;
-}
 
-.prof-view{
-    grid-area: prof;
-    background: #ddd;
-}
-
-.menu{
-    grid-area: menu;
-    background: #bbb;
-}
-
-.job-Updates{
-    grid-area: activity;
-    background: #999;
-}
-
-.feed{
-    grid-area: feed;
-    background: #777;
-}
 
 

@@ -1,22 +1,47 @@
 <!-- <router-outlet></router-outlet> -->
 <div class="container">
     <div class="status-bar">
-
+        <h2>S T A T S</h2>
+        <div class="info">
+            <p>Total number of job posted: </p>
+            <p>Total number of questions posted: </p>
+            <p>Total number of answers given: </p>
+        </div>
+        <div class="graph">
+            <p>Graph of recent activities</p>
+        </div>
     </div>
 
     <div class="prof-view">
 
+        <img src="https://firebasestorage.googleapis.com/v0/b/eyouth-17eb6.appspot.com/o/userImages%2FDefault.jpg?alt=media&token=39e6e397-7155-4e90-bfef-7fe964ac50c9" alt="src\assets\img\Default.jpg">
+        <div class="text">
+            <h3>Name of User</h3>
+            <P>rating: </P>
+        </div>
     </div>
 
     <div class="menu">
-
+        <h2>Menu</h2>
     </div>
 
     <div class="job-Updates">
+        <div class="current-jobs">
+            <h2>Onging Jobs</h2>
+            <h4>job title</h4>
+            <h4>A form</h4>
+            <h4>A button for messaging</h4>
+        </div>
+        <div class="act-of-asked">Responses to asked questions</div>
+        <div class="act-of-followed">Followed questions</div>
 
     </div>
 
     <div class="feed">
-
+        <div class="field-of-interests">
+            <p *ngFor="let D of this.listOfDom">{{D}}</p>
+        </div>
+        <div class="post-job"></div>
+        <div class="post-question"></div>
     </div>
 </div>
