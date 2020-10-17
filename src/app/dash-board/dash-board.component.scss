@@ -1,0 +1,38 @@
+.container{
+    display: grid;
+    grid-template-areas: 
+        "stat stat stat stat prof"
+        "menu activity activity activity feed"
+    ;
+    grid-auto-rows: minmax(100px, auto);
+
+    // background-color: beige;
+    max-width: 100%;
+}
+
+.status-bar{
+    grid-area: stat;
+    background: #eee;
+}
+
+.prof-view{
+    grid-area: prof;
+    background: #ddd;
+}
+
+.menu{
+    grid-area: menu;
+    background: #bbb;
+}
+
+.job-Updates{
+    grid-area: activity;
+    background: #999;
+}
+
+.feed{
+    grid-area: feed;
+    background: #777;
+}
+
+
