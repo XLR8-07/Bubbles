@@ -2,6 +2,7 @@ import { Injectable, NgZone } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
+
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -21,6 +22,7 @@ export class AuthService {
   }
 
   signUp(signUpFormData){
+    let success = true;
     console.log(signUpFormData);
      let email = signUpFormData.controls['Email'].value;
      let password = signUpFormData.controls['Password'].value;
@@ -31,7 +33,6 @@ export class AuthService {
         id: userResponse.user.uid,
         email : userResponse.user.email,
         role: 'regular',
-        Work : signUpFormData.controls['Work'].value,
         PhoneNo : signUpFormData.controls['PhoneNo'].value,
         imageURL : signUpFormData.controls['imageURL'].value,
         Address : signUpFormData.controls['Address'].value,
@@ -47,13 +48,15 @@ export class AuthService {
           console.log(x.data());
           this.currentUser = x.data();
           this.setUserStatus(this.currentUser);
-          this.router.navigate(['']);
+          this.router.navigate(['/dashboard']); 
         })
       }).catch(err =>{
         console.log(err);
+        
       })
     }).catch(err=>{
       console.log("AN ERROR OCCURED",err);
+      
     })
   }
 

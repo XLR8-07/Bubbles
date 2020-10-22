@@ -5,6 +5,7 @@ import { MatChipInputEvent } from '@angular/material/chips';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { AngularFireStorage, AngularFireStorageModule } from '@angular/fire/storage';
 import { finalize } from 'rxjs/operators';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-sign-up',
@@ -28,7 +29,6 @@ export class SignUpComponent implements OnInit {
     Name : new FormControl('',Validators.required),
     Email : new FormControl('',Validators.required),
     Password : new FormControl('',Validators.required),
-    Work : new FormControl('',Validators.required),
     PhoneNo : new FormControl('',Validators.required),
     imageURL : new FormControl('',Validators.required),
     Address : new FormControl('',Validators.required),
@@ -37,7 +37,7 @@ export class SignUpComponent implements OnInit {
     Job : new FormControl('',Validators.required)
   })
 
-  constructor(public Authservice: AuthService, private storage: AngularFireStorage) { }
+  constructor(public Authservice: AuthService, private storage: AngularFireStorage, private dialogRef: MatDialogRef<SignUpComponent>) { }
 
   ngOnInit(): void {
   }
@@ -48,7 +48,9 @@ export class SignUpComponent implements OnInit {
     console.log(email,password);
     this.testClick();
     this.Authservice.signUp(this.signUpForm);
-    this.resetSignUpForm();
+    this.dialogRef.close();
+    // this.signUpForm.reset();
+    // this.resetSignUpForm();
   }
 
   addTag(event: MatChipInputEvent): void {
@@ -97,7 +99,7 @@ export class SignUpComponent implements OnInit {
     this.storage.upload(filePath,this.selectedImage).snapshotChanges().pipe(
       finalize(()=>{
         fileRef.getDownloadURL().subscribe((url)=>{
-          this.signUpForm.controls['imageURL'].setValue(url)
+          this.signUpForm.controls['imageURL'].setValue(url);
         })
       })
     ).subscribe(()=>{
