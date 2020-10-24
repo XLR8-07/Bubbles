@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../shared/auth.service';
 
 @Component({
   selector: 'app-dash-board',
@@ -9,7 +10,7 @@ export class DashBoardComponent implements OnInit {
 
   listOfDom: string[] = ['job', 'Tour', 'Drawing', 'Fishing']
 
-  constructor() { }
+  constructor(public authService : AuthService) { }
 
   ngOnInit(): void {
   }

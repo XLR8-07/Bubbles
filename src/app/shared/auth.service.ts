@@ -13,6 +13,8 @@ export class AuthService {
   constructor(private ngZone: NgZone, private afAuth: AngularFireAuth, private firestore: AngularFirestore, private router: Router) { }
 
   public currentUser: any;
+  public currentUserName : string;
+  public currentUserEmail : string;
   public userStatus: string = '';
   public userStatusChanges: BehaviorSubject<string> = new BehaviorSubject<string>(this.userStatus);
 
@@ -33,6 +35,7 @@ export class AuthService {
         id: userResponse.user.uid,
         email : userResponse.user.email,
         role: 'regular',
+        Name : signUpFormData.controls['Name'].value,
         PhoneNo : signUpFormData.controls['PhoneNo'].value,
         imageURL : signUpFormData.controls['imageURL'].value,
         Address : signUpFormData.controls['Address'].value,
@@ -47,6 +50,8 @@ export class AuthService {
           //return the user data
           console.log(x.data());
           this.currentUser = x.data();
+          this.currentUserName = x.data().Name;
+          this.currentUserEmail = x.data().email;
           this.setUserStatus(this.currentUser);
           this.router.navigate(['/dashboard']); 
         })
