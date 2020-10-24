@@ -16,8 +16,9 @@
 
         <img src="https://firebasestorage.googleapis.com/v0/b/eyouth-17eb6.appspot.com/o/userImages%2FDefault.jpg?alt=media&token=39e6e397-7155-4e90-bfef-7fe964ac50c9" alt="src\assets\img\Default.jpg">
         <div class="text">
-            <h3>Name of User</h3>
-            <P>rating: </P>
+            <h3>Name:</h3>
+            <h4>Email:</h4>
+            <P>Rating: </P>
         </div>
     </div>
 
@@ -27,10 +28,18 @@
 
     <div class="job-Updates">
         <div class="current-jobs">
-            <h2>Onging Jobs</h2>
-            <h4>job title</h4>
-            <h4>A form</h4>
-            <h4>A button for messaging</h4>
+            <h2>Onging Job</h2>
+            <h4>job title:</h4>
+            <div class="listings">
+                <p>Assigned Mentor: </p>
+                <p>Completion: </p>
+                <p>Deadline: </p>
+                <p>Payment: </p>
+                <p>Payment Status: </p>
+                <p>Job Status: </p>
+                <p>Message: </p>
+            </div>
+            <button mat-button color="primary">Send Message</button>
         </div>
         <div class="act-of-asked">Responses to asked questions</div>
         <div class="act-of-followed">Followed questions</div>
@@ -39,9 +48,12 @@
 
     <div class="feed">
         <div class="field-of-interests">
+            <h2>Domains</h2>
             <p *ngFor="let D of this.listOfDom">{{D}}</p>
         </div>
         <div class="post-job"></div>
+        <button mat-button color="primary">Post Job</button>
+        <button mat-button color="primary">Ask Question</button>
         <div class="post-question"></div>
     </div>
 </div>
