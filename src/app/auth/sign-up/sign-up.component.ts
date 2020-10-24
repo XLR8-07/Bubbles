@@ -16,6 +16,8 @@ export class SignUpComponent implements OnInit {
 
   hide = true;
   selectedImage: any = null;
+  imageFile : File;
+  imageURL : '';
   imgSrc : string = '/assets/img/image_placeholder2.png';
   isSubmitted : boolean = false;
   Taglist: string[] = [];
@@ -46,8 +48,13 @@ export class SignUpComponent implements OnInit {
     let email = this.signUpForm.controls.Email.value;
     let password = this.signUpForm.controls.Password.value;
     console.log(email,password);
-    this.testClick();
-    this.Authservice.signUp(this.signUpForm);
+    this.uploadImage().then(()=>{
+      this.Authservice.signUp(this.signUpForm);
+    } 
+    );
+    // this.testClick();
+
+    
     this.dialogRef.close();
     // this.signUpForm.reset();
     // this.resetSignUpForm();
@@ -99,11 +106,35 @@ export class SignUpComponent implements OnInit {
     this.storage.upload(filePath,this.selectedImage).snapshotChanges().pipe(
       finalize(()=>{
         fileRef.getDownloadURL().subscribe((url)=>{
-          this.signUpForm.controls['imageURL'].setValue(url);
+          // this.signUpForm.controls['imageURL'].setValue(url);
         })
       })
     ).subscribe(()=>{
     })
+  }
+
+  handleFiles(event){
+    this.imageFile = event.target.files[0];
+  }
+
+  async uploadImage(){
+    if(this.selectedImage){
+      const filePath = `userImages/${this.selectedImage.name}`;
+      const snap = await this.storage.upload(filePath,this.selectedImage);
+      this.getURL(snap);
+
+    }
+    else{
+      console.log('PLEASE SELECT AN IMAGE!!');
+    }
+  }
+
+  async getURL(snap : firebase.storage.UploadTaskSnapshot){
+    const url = await snap.ref.getDownloadURL();
+    this.imageURL = url;
+    this.Authservice.currentUserImageURL = this.imageURL;
+    // this.signUpForm.controls['imageURL'].setValue(this.imageURL);
+    console.log(this.imageURL);
   }
 
   resetSignUpForm(){

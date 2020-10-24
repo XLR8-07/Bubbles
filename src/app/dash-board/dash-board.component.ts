@@ -17,6 +17,7 @@ export class DashBoardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getRating()
+    // console.log(this.authService.currentUserImageURL);
   }
 
   getRating(){

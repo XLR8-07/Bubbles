@@ -15,6 +15,7 @@ export class AuthService {
   public currentUser: any;
   public currentUserName : string;
   public currentUserEmail : string;
+  public currentUserImageURL : string;
   public userStatus: string = '';
   public userStatusChanges: BehaviorSubject<string> = new BehaviorSubject<string>(this.userStatus);
 
@@ -24,7 +25,7 @@ export class AuthService {
   }
 
   signUp(signUpFormData){
-    let success = true;
+    
     console.log(signUpFormData);
      let email = signUpFormData.controls['Email'].value;
      let password = signUpFormData.controls['Password'].value;
@@ -37,7 +38,7 @@ export class AuthService {
         role: 'regular',
         Name : signUpFormData.controls['Name'].value,
         PhoneNo : signUpFormData.controls['PhoneNo'].value,
-        imageURL : signUpFormData.controls['imageURL'].value,
+        imageURL : this.currentUserImageURL,
         Address : signUpFormData.controls['Address'].value,
         Description : signUpFormData.controls['Description'].value,
         Proficiency: signUpFormData.controls['Proficiency'].value,
@@ -48,7 +49,7 @@ export class AuthService {
       .then(user=>{
         user.get().then(x => {
           //return the user data
-          console.log(x.data());
+          // console.log(x.data());
           this.currentUser = x.data();
           this.currentUserName = x.data().Name;
           this.currentUserEmail = x.data().email;
@@ -66,19 +67,26 @@ export class AuthService {
   }
 
   login(email: string, password: string) {
-      
+    console.log("HERE!")
     this.afAuth.signInWithEmailAndPassword(email, password)
     .then((user)=>{
-      this.firestore.collection("Users").ref.where("username", "==", user.user.email).onSnapshot(snap =>{
+      console.log("HERE AGAIN!");
+      this.firestore.collection("Users").ref.where("email", "==", user.user.email).onSnapshot(snap =>{
+        console.log(snap.size)
         snap.forEach(userRef => {
+          console.log("SNAP!!!!")
           console.log("userRef", userRef.data());
           this.currentUser = userRef.data();
+          this.currentUserName = userRef.data().Name;
+          this.currentUserEmail = userRef.data().email;
+          this.currentUserImageURL = userRef.data().imageURL;
           //setUserStatus
           this.setUserStatus(this.currentUser)
-          if(userRef.data().role !== "admin") {
-            this.router.navigate(['']); ///set own routing
+          if(userRef.data().role !== "regular") {
+            this.router.navigate(['/dashboard']); ///set own routing
           }else{
-            this.router.navigate(['']); // set own routing based on roles
+            
+            this.router.navigate(['/dashboard']); // set own routing based on roles
           }
         })
       })
